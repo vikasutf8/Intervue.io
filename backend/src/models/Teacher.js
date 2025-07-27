@@ -22,4 +22,31 @@ class Teacher {
     return isValidPassword ? teacher : null;
   }
 
+   updateSocketId(teacherId, socketId) {
+    const teacher = this.teachers.get(teacherId);
+    if (teacher) {
+      teacher.socketId = socketId;
+      teacher.isOnline = true;
+    }
+  }
+  
+  setOffline(teacherId) {
+    const teacher = this.teachers.get(teacherId);
+    if (teacher) {
+      teacher.socketId = null;
+      teacher.isOnline = false;
+    }
+  }
+  
+  getBySocketId(socketId) {
+    for (const [teacherId, teacher] of this.teachers) {
+      if (teacher.socketId === socketId) {
+        return { teacherId, ...teacher };
+      }
+    }
+    return null;
+  }
+
 }
+
+module.exports = new Teacher();
