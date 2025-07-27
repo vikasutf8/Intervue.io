@@ -7,6 +7,7 @@ const authController = {
   async teacherLogin(req, res) {
     try {
       const { teacherId, password } = req.body;
+    
       
       const teacher = await Teacher.findByCredentials(teacherId, password);
       if (!teacher) {

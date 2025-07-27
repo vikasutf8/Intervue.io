@@ -1,8 +1,8 @@
 const express = require('express');
-const pollController = require('../controllers/pollController');
-const { authenticateTeacher, authenticateStudent } = require('../middleware/authMiddleware');
-const { validate } = require('../middleware/validationMiddleware');
-const schemas = require('../utils/validation');
+const pollController = require('../controllers/pollController.js');
+const { authenticateTeacher, authenticateStudent } = require('../middleware/authMiddleware.js');
+const { validate } = require('../middleware/vaidationMiddlweware.js');
+const schemas = require('../utils/validation.js');
 
 const router = express.Router();
 

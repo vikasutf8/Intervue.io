@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', authRoutes);
-// app.use('/api/polls', pollRoutes);
-// app.use('/api/students', studentRoutes);
+app.use('/api/polls', pollRoutes);
+app.use('/api/students', studentRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

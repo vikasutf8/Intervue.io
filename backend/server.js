@@ -16,8 +16,8 @@ const io = socketIo(server, {
 app.set('io', io);
 
 // Socket.IO connection handling
-// require('./src/sockets/pollSocket')(io);
-// require('./src/sockets/chatSocket')(io);
+require('./src/sockets/pollSocket')(io);
+require('./src/sockets/chatSocket')(io);
 
 const PORT = process.env.PORT || 3001;
 
